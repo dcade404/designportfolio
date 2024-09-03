@@ -1,86 +1,943 @@
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+@charset "UTF-8";
+
+/***********************************************/
+/* All code copyright 2024 by David Cade */
+/* May not be used without permission */
+/* (Except as otherwise noted) */
+/***********************************************/
+
+:root {
         
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
+    /* Minor Thirds */
+    --fontsize1: 2.488rem;
+    --fontsize2: 2.074rem;
+    --fontsize3: 1.728rem;
+    --fontsize4: 1.44rem;
+    --fontsize5: 1.2rem;
+    --fontsize6: 1.0rem;
+    --fontsize7: 1.0rem;
+    --fontsize8: 0.833rem;
+    --fontsize0: 0.694rem;
 
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
+    --baseFontSize: 1.0rem;
+    
+    --nameplate: 3.177rem;
+    
+    --headingFontFamily: "Oswald", sans-serif;
+    --bodyFontFamily: "Overpass", sans-serif;
+    
+    --bodyBgColor: hsla( 0, 1%, 90%, 1.0 );
+    --textBgColor: hsla( 0, 1%, 93%, 1.0 );
+    --headingColor: hsla( 0, 1%, 45%, 1.0 );
 
-        header h1 {
-            margin-bottom: 10px;
-        }
+    --textColor: hsla( 0, 1%, 35%, 1.0 );
+    --emphasisTextColor: hsla( 0, 1%, 20%, 1.0 );
+    --linkColor: hsla( 30, 20%, 50%, 1.0 );
+    --linkHoverColor: hsla( 30, 50%, 50%, 1.0 );
+    --linkVisitedColor: hsla( 200, 10%, 50%, 1.0 );
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
+    --borderColor: hsla( 0, 1%, 30%, 0.25 );
+    --footnoteTextColor: hsla( 0, 1%, 50%, 0.75 );
+    --disabledTextColor: hsla( 0, 1%, 50%, 0.75 );
+    
+    --bodyBgGradient: linear-gradient( 165deg, hsla( 0, 1%, 98%, 1.0 ) 12%, hsla( 0, 1%, 90%, 1.0 ) 40%, hsla( 0, 1%, 85%, 1.0 ) 100% );
+    --mainNavGradient: linear-gradient( 165deg, hsla( 0, 1%, 90%, 1.0 ) 10%, hsla( 0, 1%, 85%, 1.0 ) 100% );
+    --navButtonGradient: linear-gradient( 165deg, hsla( 0, 1%, 95%, 0.75 ) 12%, hsla( 0, 1%, 90%, 1.0 ) 40%, hsla( 0, 1%, 75%, 0.75 ) 100% );
+    
+    --scrollGradientFade: box-shadow 1s ease 0.05s;
+    --visibilityFade: opacity 2.0s ease 0.0s;
+}
 
-        nav ul li {
-            display: inline;
-            margin-right: 10px;
-        }
+ 
+/*********/
+/* FONTS */
+/*********/
 
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
 
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
+body {
+    font-family: var( --bodyFontFamily );
+    /*font-size: var( --baseFontSize );*/
+    word-spacing: 0.10em;
+    letter-spacing: 0.01em;
+    line-height: calc( 1ex / 0.32 );
+}
 
-        .portfolio-item {
-            margin-bottom: 30px;
-        }
+nav a  {
+}
 
-        .portfolio-item img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: auto;
-        }
+small {
+}
 
-        .portfolio-item h3 {
-            text-align: center;
-            margin: 10px 0;
-        }
+h1, h2, h3, h4, h5, h6 {
+    font-family: var( --headingFontFamily );
+    font-weight: normal;
+    line-height: calc( 2.5ex / 1.0 );
+}
 
-        .contact-form {
-            background: #f4f4f4;
-            padding: 20px;
-            margin-top: 20px;
-        }
+h1 {
+    font-size: var( --fontsize1 );
+}
 
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-        }
+h2 {
+    font-size: var( --fontsize2 );
+}
 
-        .contact-form button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background: #333;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
+h3 {
+    font-size: var( --fontsize3 );
+    /*letter-spacing: -0.01em;*/
+}
 
-        .contact-form button:hover {
-            background: #555;
-        }
+h4 {
+    font-size: var( --fontsize4 );
+    /*letter-spacing: -0.01em;*/
+}
+
+h5 {
+    font-size: var( --fontsize5 );
+    /*letter-spacing: 0.025em;*/
+}
+
+h6 {
+    font-size: var( --fontsize5 );
+    /*letter-spacing: 0.05em;*/
+}
+
+.need-nda {
+}
+
+body > header h1, body > header h2 {
+    line-height: calc( 2.5ex / 1.0 );
+}
+
+#nameplate {
+    font-family: var( --headingFontFamily );
+    font-size: var( --fontsize5 );
+    content: "Kevin Lynn Brown";
+    word-spacing: 0.25em;
+    letter-spacing: 0.02em;
+}
+
+#navmain {
+    word-spacing: 2rem;
+}
+
+#mission > p > strong {
+    font-weight: normal;
+}
+
+#business_card h1 {
+    font-size: var( --fontsize2 );
+}
+
+#business_card h2 {
+    font-size: var( --fontsize3 );
+}
+
+header nav {
+    word-spacing: 6rem;
+}
+
+#portfolio dl dt:first-of-type,
+#portfolio dl dd:first-of-type {
+    font-weight: bold;
+    font-size: larger;
+}
+
+
+
+
+/**********/
+/* COLORS */
+/**********/
+
+
+body, #portfolio-login {
+    color: var( --textColor );
+    /* Line drwaing from GetDrawings.com */
+    /* http://getdrawings.com/vectors/vector-line-png-35.png */
+    background-image: var( --bodyBgGradient ), url(../img/bkgd/wavy-lines10.png); 
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-attachment: fixed;
+    background-size: cover;
+    background-blend-mode: soft-light;
+}
+
+article {
+    background-attachment: fixed;
+    background-image: linear-gradient( 165deg, hsla( 0, 1%, 98%, 0.5 ) 12%, hsla( 0, 1%, 90%, 0.5 ) 40%, hsla( 0, 1%, 85%, 0.5 ) 100% );
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var( --headingColor );
+}
+
+a {
+    color: var( --linkColor );
+}
+
+a:visited {
+    color: var( --linkVisitedColor );
+}
+
+a:active {
+    color: var( --linkHoverColor );
+}
+
+a:hover, 
+a:visited:hover {
+    color: var( --linkHoverColor );
+}
+
+a.selected, 
+a.selected:hover  {
+    color: var( --linkHoverColor );
+    border-bottom: solid 2px var( --linkHoverColor );
+    text-decoration: none;
+}
+
+header > nav {
+    background-color: var( --bodyBgColor );
+    background-image: var( --bodyBgGradient );
+    background-attachment: fixed;
+}
+
+details > summary {
+    border: none;
+    outline: none;
+}
+
+.screen {   
+    border: inset 9px rgba( 255, 255, 255, 0.4 );
+    box-shadow: 10px 7px 55px 16px hsla( 0, 1%, 80%, 0.75 );
+    border-radius: 25px;
+    margin: 1em 1rem;
+}
+
+.topScroll {
+    box-shadow: 5px 0px 50px 0px hsla( 0, 1%, 70%, 0.5 );
+    transition: var( --scrollGradientFade );
+}
+
+.bottomScroll {
+    box-shadow: -7px 0px 70px 0px hsla( 0, 1%, 75%, 0.6 );
+    transition: var( --scrollGradientFade );
+}
+
+.klb_logo {
+    background-image: url("../img/guichi_black.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.85;
+    border-top: solid 10px white;
+    border-bottom: solid 10px white;
+    border-right: solid 6px white;
+    border-left: solid 6px white;
+    border-radius: 12px;
+    box-shadow: 0px 0px 1px 1px hsla( 0, 1%, 0%, 0.5 );
+}
+
+.need-nda {
+    background: url("../img/deny-512.png"), linear-gradient( 0deg, rgba(250,250,250,0.75) 0%, rgba(250,250,250,0.75) 100% );
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: color-dodge;
+}
+
+img.nda {
+    filter: blur(5px) opacity(75%);
+    overflow: hidden;
+}
+
+#nameplate {
+    color: var( --headingColor );
+}
+
+#navmain {
+    background-color: var( --bodyBgColor );
+    background-image:  var( --mainNavGradient );
+    background-origin: border-box;
+}
+
+#navmain a {
+    padding: 0.70em 2.0rem 0.5em;
+    border-radius: 1.5rem;
+    border: solid 1px var( --borderColor );
+    background-color: var( --bodyBgColor );
+    background-image:  var( --navButtonGradient );
+}
+
+#business_card aside {
+    color: hsla( 0, 1%, 50%, 1.0 );
+}
+
+#resume > nav ul, #portfolio > nav ul {
+    background-color: var( --bodyBgColor );
+    background-image:  var( --bodyBgGradient );
+    background-attachment: fixed;
+    box-shadow: 10px 15px 25px 0px hsla( 0, 1%, 75%, 0.5 );
+}
+
+#experience h2, #experience h4, #experience h5 {
+    color: var( --textColor );
+}
+
+#experience h2 small, #experience h4 small, #experience h5 small,
+#portfolio header h3 small, #portfolio section header h4 small,
+#portfolio header h3 small, #portfolio div h4 small {
+    color: var( --footnoteTextColor );
+}
+
+#portfolio dl dt:first-of-type,
+#portfolio dl dd:first-of-type {
+    color: var( --emphasisTextColor );
+}
+
+#experience section .logo,
+#experience div .logo,
+#portfolio div .logo {
+    height: 1px;
+    width: 1px;
+    padding: 0.5em 0.25rem;
+    float: right;
+    z-index: 5;
+    background-position: 0.25em 0.5rem;
+    background-color: white;
+    clear: none;
+}
+
+#experience section.acceldata .logo,
+#experience div.acceldata .logo,
+#portfolio div.acceldata .logo {
+    /* 197 x 49 */
+    width: 106.1px;
+    height: 30px;
+    background-image: url('../img/logos/acceldata.svg');
+    background-repeat: no-repeat;
+    background-size: 106.1px 30px;
+}
+
+#experience section.ccc .logo,
+#experience div.ccc .logo,
+#portfolio div.ccc .logo {
+    /* 170 x 60 */
+    width: 112.2px;
+    height: 40px;
+    background-image: url('../img/logos/ccc-logo.png');
+    background-repeat: no-repeat;
+    background-size: 112.2px 40px;
+}
+
+#experience section.zs .logo,
+#experience div.zs .logo,
+#portfolio div.zs .logo {
+    /* 1200 x 947.21 */
+    width: 69px;
+    height: 54px;
+    background-image: url('../img/logos/zs-logo.svg');
+    background-repeat: no-repeat;
+    background-size: 69px 54px;
+}
+
+#experience section.conga .logo,
+#experience div.conga .logo,
+#portfolio div.conga .logo {
+    width: 89px;
+    height: 30px;
+    background-image: url('../img/logos/conga-logo.png');
+    background-repeat: no-repeat;
+    background-size: 89px 30px;
+}
+
+#experience section.apttus .logo,
+#experience div.apttus .logo,
+#portfolio div.apttus .logo {
+    width: 119px;
+    height: 21px;
+    background-image: url('../img/logos/apttus-logo.png');
+    background-repeat: no-repeat;
+    background-size: 119px 21px;
+}
+
+#experience section.sap .logo,
+#experience div.sap .logo,
+#portfolio div.sap .logo {
+    width: 61px;
+    height: 30px;
+    background-image: url('../img/logos/sap-logo.svg');
+    background-repeat: no-repeat;
+    background-size: 61px 30px;
+    background-color: transparent;
+}
+
+#experience section.calliduscloud .logo,
+#experience div.calliduscloud .logo,
+#portfolio div.calliduscloud .logo {
+    width: 78px;
+    height: 29px;
+    background-image: url('../img/logos/callidus-logo.png');
+    background-repeat: no-repeat;
+    background-size: 78px 29px;
+}
+
+#experience section.ibm .logo,
+#experience div.ibm .logo,
+#portfolio div.ibm .logo {
+    width: 53px;
+    height: 21px;
+    background-image: url('../img/logos/ibm-logo.gif');
+    background-repeat: no-repeat;
+    background-size: 53px 21px;
+    margin-bottom: 0.5rem;
+}
+
+#experience section.liquidengines .logo,
+#experience div.liquidengines .logo,
+#portfolio div.liquidengines .logo {
+    width: 131px;
+    height: 17px;
+    background-image: url('../img/logos/liquidengines-logo.gif');
+    background-repeat: no-repeat;
+    background-size: 131px 17px;
+}
+
+#experience section.alphablox .logo,
+#experience div.alphablox .logo,
+#portfolio div.alphablox .logo {
+    width: 111px;
+    height: 17px;
+    background-image: url('../img/logos/alphablox-logo.gif');
+    background-repeat: no-repeat;
+    background-size: 111px 17px;
+}
+
+#experience section.myers .logo,
+#experience div.myers .logo,
+#portfolio div.myers .logo {
+    width: 88px;
+    height: 32px;
+    background-image: url('../img/logos/myers-logo.gif');
+    background-repeat: no-repeat;
+    background-size: 88px 32px;
+    background-color: transparent;
+}
+
+#portfolio #iwatch img[class="interactive"] {
+    width: 156px;
+    height: 195px;
+}
+
+#portfolio #iwatch figure div, 
+#portfolio #iwatch > div > div > div > div {
+    background-color: transparent;
+    background-image: url('../portfolio/m-litmos/iWatchCallidus_42mm_short_look.png');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 276px 315px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+
+
+/**********/
+/* LAYOUT */
+/**********/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body, #portfolio-login {
+    margin: 0px;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0rem;
+}
+
+body > h1, 
+body > h2, 
+body > h3, 
+body > h4, 
+body > h5, 
+body > h6, 
+div, 
+ol, 
+ul, 
+dl,
+section {
+    padding: 2em 2rem;
+}
+
+main {
+    padding: 0em 16rem;
+}
+
+section {
+    min-height: 100vh;
+}
+
+figure, footer {
+    text-align: center;
+    margin-right: 0rem;
+    margin-left: 0rem;
+}
+
+figure p {
+    text-align: justify;
+}
+
+picture {
+    display: inline-block;
+}
+
+picture:not(:first-of-type) {
+    margin-top: 2.0em;
+}
+
+h5 + picture:not(:first-of-type), #full-stack-lei-gpm > figure > picture:last-of-type {
+    margin-top: 0.0em;
+}
+
+del {
+    visibility: hidden;
+    display: none;
+}
+
+body > header {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.screen {
+    height: 275px;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.mission.screen {
+    height: 480px;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.compare {
+    column-width: calc( 45% - 1rem );
+    column-count: 2;
+    column-gap: 1rem;
+    column-rule: none;
+    display: flex;
+    padding-bottom: 0rem;
+}
+
+.compare div {
+    /* fix v-alignment issues */
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding-left: 0.0rem;
+    padding-right: 0.0rem;
+    padding-bottom: 0rem;
+}
+
+.klb_logo {
+    /* 1256 × 1744 */
+    height: 87.4px;
+    width: 62.5px;
+    display: inline-block;
+    float: left;
+    margin: 0em 2rem 0em 16vw;
+}
+
+.need-nda {
+    font-size: 1.75rem;
+    text-align: center;
+    padding: 2em 0rem;
+}
+
+body > header > nav {
+    position: fixed;
+    top: 0rem;
+    right: 0rem;
+    width: 100vw;
+    z-index: 100;
+}
+
+body > header > nav > p {
+    float: right;
+    padding: 1em 4rem;
+}
+
+details > summary {
+    border: none;
+    outline: none;
+    list-style: none;
+}
+
+details > summary ul {
+    padding-left: 0rem;
+}
+
+details > summary li {
+    list-style: none;
+}
+
+figure, 
+figure .compare div,
+.iwatch figure div,
+.iwatch details div,
+details div,
+details {
+    text-align: center;
+}
+
+figure h5, 
+figure div, 
+figure .compare div h5, 
+figure p, 
+details summary, 
+details h5, 
+details h6, 
+/*details div, */
+details p, 
+details ul, 
+details ol, 
+details dl {
+    text-align: left;
+}
+
+figure h5 {
+    margin-top: 3.0em;
+}
+
+#portfolio header h3 small, #portfolio section header h4 small,
+#portfolio header h3 small, #portfolio div h4 small {
+    display: block;
+}
+
+summary, span.more, span.less {
+    border: none;
+}
+
+summary:hover, span.more:hover, span.less:hover {
+    cursor: pointer;
+}
+
+#nameplate {
+    position: fixed;
+    top: 1.5em;
+    left: 3.0rem;
+    margin: 0em 0rem;
+    padding: 0em 0rem;
+    display: inline-block;
+    opacity: 0;
+    transition: var( --visibilityFade );
+    z-index: 10;
+}
+
+#navmain {
+    position: fixed;
+    display: inline-block;
+    bottom: 0.0rem;
+    left: 0.0rem;
+    left: 50%;
+    transform: translateX( -50% );
+    width: 100%;
+    text-align: center;
+    margin: 0.0rem;
+    z-index: 100;
+}
+
+#business_card {
+    height: 40vh;
+    width: 100%;
+    margin: 30vh 0rem 20vh;
+    padding: 0rem;
+}
+
+#resume > nav, #portfolio > nav  {
+    position: fixed;
+    top: 3rem;
+    z-index: 1000;
+    display: none;
+}
+
+#resume > nav {
+    right: 3rem;
+}
+
+#portfolio > nav {
+    right: 13.5rem;
+}
+
+#resume > nav ul, #portfolio > nav ul {
+    padding: 1em 2rem 2em;
+    border-radius: 0em 0em 2em 2em;
+}
+
+#resume > nav li, #portfolio > nav li {
+    list-style-type: none;
+    margin: 0.75em 0rem;
+}
+
+#experience h2 small, #experience h4 small, #experience h5 small {
+    margin-left: 1.0rem;
+}
+
+#experience.details-showing section .logo,
+#experience section.open .logo,
+#experience.details-showing div .logo,
+#experience div.open .logo {
+    display: inline;
+}
+
+#roles {
+    column-count: 2;
+    column-width: 50%;
+    column-gap: 2rem;
+}
+
+#roles h3 {
+    column-span: all;
+    margin-bottom: 1em;
+}
+
+/* break-inside: avoid-column - taken from https://stackoverflow.com/questions/23800485/force-div-to-next-column */
+#roles div {
+    break-inside: avoid-column;
+    padding-top: 0.0rem;
+}
+
+#roles h4:first-of-type {
+    margin-top: 0.0rem;
+}
+
+#roles h4:nth-of-type(3) {
+    break-after: column;
+    display: inline-block;
+}
+
+#approachDetails > div, #approachDetails > div > dl {
+    padding-bottom: 0.0em;
+    margin-bottom: 0.0em;
+}
+
+#patents h4 {
+    margin-bottom: 0.0em;
+}
+
+#patents h4:not(:first-child) {
+    margin-top: 3em;
+}
+
+#portfolio dl {
+    display: grid;
+    grid-template-columns: 15% auto;
+    text-align: left;
+}
+
+#portfolio dl label {
+    padding-right: 0.5rem;
+}
+
+#portfolio dl dt {
+    white-space: nowrap;
+}
+
+#portfolio figcaption + div, 
+#portfolio figcaption + div ul, 
+#portfolio figcaption + div ol,
+#portfolio #iwatch figure + div {
+    margin-top: 0.0em;
+    padding-top: 0.0em;
+    margin-bottom: 0.0em;
+    padding-bottom: 0.0em;
+}
+
+#portfolio #unify-brand .columns,
+#portfolio #iwatch .columns {
+    column-count: 2;
+    column-width: 50%;
+    column-gap: 2rem;
+}
+
+#portfolio #unify-brand .columns div,
+#portfolio #iwatch .columns > div {
+    break-inside: avoid-column;
+    padding-top: 0.0rem;
+    vertical-align: top;
+    /* fix for side by side alignment, why does this work? */
+    border: solid 1px transparent;
+}
+
+#portfolio #web-hubscher div {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#portfolio #web-hubscher div img {
+
+    flex-grow: 1;
+    flex-basis: auto;
+
+}
+
+#portfolio #web-hubscher picture,
+#portfolio #graphic-installer-splash picture {
+    margin-top: 0.0em;
+}
+
+#portfolio #graphic-installer-splash div {
+    display: inline-grid;
+    gap: 0.5rem 2em; 
+    grid-template-columns: repeat( 2, 1fr ); 
+    grid-template-rows: repeat( 2, 1fr );
+}
+
+#patent-lists figcaption + div {
+    padding-bottom: 1.0em;
+}
+
+#education section div p,
+#education div div p,
+#education div p {
+    text-indent: 2rem;
+}
+
+#strengths p,
+#story p,
+#approach p,
+#patents .abstract {
+    text-align: justify;
+}
+
+#portfolio-login {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    opacity: 0;
+}
+
+#portfolio-login-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    width: 25rem;
+}
+
+#portfolio-login .klb_logo {
+    margin: 0rem 2rem;
+}
+
+#portfolio-login input {
+    width: 15rem;
+}
+
+#portfolio-login #password-error {
+    color: brown;
+    font-size: smaller;
+    opacity: 0;
+}
+
+
+/* taken from https://stackoverflow.com/questions/38213329/how-to-add-css3-transition-with-html5-details-summary-tag-reveal */
+details[open] summary ~ * {
+  animation: fadeInDetails 0.75s ease-in-out;
+}
+
+@keyframes fadeInDetails {
+    0% {
+        opacity: 0; 
+        height: 0%;
+    }
+    100% {
+        opacity: 1; 
+        height: 100%;
+    }
+}
+
+/* Doesn't work */
+details:not([open]) summary ~ * {
+  animation: fadeOutDetails 0.75s ease-in-out;
+}
+
+@keyframes fadeOutDetails {
+    0% {
+        opacity: 1; 
+        height: 100%;
+    }
+    100% {
+        opacity: 0; 
+        height: 0%;
+    }
+}
+
+@media only screen {
+    abbr {
+        display: none;
+    }
+}
+
+@media only screen 
+and (min-width: 300px) {
+    
+}
+
+@media only screen 
+and (min-width: 480px) {
+
+}
+
+@media only screen 
+and (min-width: 530px) {
+    
+}
+
+@media only screen 
+and (min-width: 600px) {
+
+}
+
+@media only screen 
+and (min-width: 700px) {
+
+}
+
+@media only screen 
+and (min-width: 800px) {
+
+}
+
+@media only screen 
+and (min-width: 1024px) {
+
+}
+
+@media only screen
+and (min-width: 1100px) {
+
+}
+
+@media only screen
+and (min-width: 1300px) {
+
+}

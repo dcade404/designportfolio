@@ -1,0 +1,53 @@
+
+body {
+  	margin: 0;
+  	line-height: normal;
+}
+
+
+:root {
+  	
+  	/* fonts */
+  	--paragaph: 'Noto Sans';
+  	--caption-regular: Forza;
+  	--font-vitesse: Vitesse;
+  	
+  	/* font sizes */
+  	--paragaph-size: 14px;
+  	--caption-regular-size: 12px;
+  	--label-1-size: 16px;
+  	--title-2-light-size: 26px;
+  	
+  	/* Colors */
+  	--background: #f4f5f5;
+  	--light-base-gray-50-bg: #f2f4f8;
+  	--background-1: #fff;
+  	--primary: #111;
+  	--border: rgba(0, 0, 0, 0.08);
+  	--tertiary: #999;
+  	--ghost-bg-hover: rgba(174, 177, 183, 0.16);
+  	--secondary: #666;
+  	--light-base-gray-300: #c0c5d1;
+  	--light-base-blue-300: #8aabe5;
+  	--light-text-blue-500: #2b67cf;
+  	--accent: #a15830;
+  	
+  	/* Gaps */
+  	--gap-13xl: 32px;
+  	--gap-5xs: 8px;
+  	--gap-base: 16px;
+  	--gap-3xs: 10px;
+  	
+  	/* Paddings */
+  	--padding-101xl: 120px;
+  	--padding-base: 16px;
+  	--padding-5xs: 8px;
+  	--padding-xs: 12px;
+  	--padding-5xl: 24px;
+  	--padding-9xs: 4px;
+  	
+  	/* Border radiuses */
+  	--br-7xs: 6px;
+  	--br-9xs: 4px;
+  	
+}

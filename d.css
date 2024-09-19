@@ -426,7 +426,7 @@ a, a:visited, a:hover, a:focus {
     color: #2b67cf;
     font-family: 'Titillium Web', sans-serif;
 }
-.button-round{
+.button-round {
     position: relative;
     border-radius: 16px;
     border: 1px #c0c5d1;

@@ -55,7 +55,7 @@
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script><script async="" src="scripts/hotjar-958639.js"></script> -->
 
-    <title>Data Visualizations | dcade design | Data Apps and Experience Design Portfolio</title>
+    <title>Policy Workflow Optimization | dcade design | Data Apps and Experience Design Portfolio</title>
 
     <!-- for Google -->
     <meta name="description" content="Designer focused on brand strategy + identity design, print + packaging design and UI + UX design for web and mobile apps.">
@@ -124,9 +124,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center hero">
-                <h1 class="section-title">Acceldata Observability Cloud: Portable Dashboards and Visualizations</h1>
+                <h1 class="section-title">Policy Workflow Optimization</h1>
                 <p class="hero-description">
-                    ADOC lacked a unified dashboard to display key metrics, trends, and critical data in a customizable, user-relevant manner. While individual products (such as Compute and Data Reliability) offered reporting capabilities, customers perceived these as disjointed components under the ADOC umbrella. A unified dashboard functionality was essential to provide a seamless user experience across ADOC. ADOC Dashboards and components were envisioned as a "Lego Framework" to deliver a cohesive experience.
+                    Data Reliability focuses on the creation, execution, and review of rules and policies. However, the current process presents several points of friction, such as scattered navigation, inconsistent user experiences, and inefficient workflows. Addressing these issues is essential to improve clarity, usability, and customer satisfaction while ensuring seamless policy management across ADOC.
                 </p>
             </div>
         </div>
@@ -135,11 +135,11 @@
 <!------------------------------->
 
 <!---- Project Featured Photo Section ------->
-<section class="project-hero-unit copilot" data-aos="fade-up">
+<section class="project-hero-unit policy_workflows" data-aos="fade-up">
     <div class="container-fluid h-100">
         <div class="row  h-100 align-items-end">
             <div class="col-12">
-                <img src="images/portfolio/copilot/copilot_hero.png">
+                <img src="images/portfolio/policy_workflows/policy_improved.png">
             </div>
 
         </div>
@@ -166,7 +166,7 @@
             <div class="col-lg-10 col-12 mx-auto">
                 <h4 class="project-title">Solution Summary</h4>
                     <p class="project-description  font-sm pb-0">
-                    The unified ADOC Dashboard provides a customizable interface that acts as the central starting point for accessing critical information within ADOC. Designed to cater to diverse user personas, it allows users to select the most relevant metrics and insights. By integrating a rich library of widgets across the ADOC Suite of products (Compute, Data Reliability, and Pipelines), the dashboard framework ensures consistency and flexibility. Additionally, it paves the way for third-party integrations, enabling partners to extend reporting capabilities.
+                    The initiative aims to streamline navigation, enhance the integration of AI capabilities, and simplify policy creation through reusable rule libraries and intuitive interfaces. Key milestones include improving navigation to eliminate unexpected pages and dead ends, integrating AI-driven recommendations and natural language interfaces (NLI) into policy creation, and building a reusable rule library to simplify workflows. These improvements will reduce the learning curve, enhance SQL monitoring capabilities, and eliminate inefficient workarounds, ensuring a user-friendly and powerful experience.
                     </p>
                 <h4 class="project-title">Target Users</h4>
                 <p class="project-description  font-sm pb-0">
@@ -181,18 +181,12 @@
                 <div class="container">
                     <div class="row">
                         <img data-aos="fade-up" width="100%"
-                         src="images/portfolio/copilot/copilot_components.png">
+                         src="images/portfolio/policy_workflows/workflow_steps_1-5.png">
                     </div>
                 </div>
                 <p class="project-description  font-sm pb-0">
                     The rationale for implementing a copilot solution is to address key challenges in deploying and using the product while minimizing the need for extensive onboarding or ongoing hand-holding. By introducing role-based landing pages, natural language interface (NLI) prompts, access to recent activity, contextual help, and redesigned secondary pages, the solution simplifies navigation and promotes key entry points. This approach directly reduces the difficulty and complexity of core tasks, making the product more intuitive and self-serve for day-to-day use. The copilot solution ensures that users can achieve their goals efficiently, enhancing productivity and reducing friction in the workflow.
                 </p>
-                <div class="container">
-                    <div class="row">
-                        <img data-aos="fade-up" width="100%"
-                         src="images/portfolio/copilot/copilot_key_components.png">
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -203,13 +197,148 @@
     <div class="container-fluid h-100">
         <div class="row  h-100 align-items-end">
             <div class="col-12">
-                <img src="images/portfolio/copilot/copilot_response.png">
+                     <img class="portfolio-image" src="images/portfolio/policy_workflows/images/pw_usability_testing_synthesis.png"
+                     srcset="images/portfolio/policy_workflows/pw_usability_testing_synthesis@2x.png 2x, images/portfolio/policy_workflows/pw_usability_testing_synthesis@3x.png 3x">
             </div>
 
         </div>
     </div>
 </section>
 <!------------------------------->
+
+<!-------------Project Description Section------------------>
+<section data-aos="fade-up" class="project-description-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-12 mx-auto">
+                <h4 class="project-title">Approach</h4>
+                <p class="project-description  font-sm pb-0">
+                    Our user interview process was constrained by a limited customer base and the sensitivity of their data practices. Despite this, we engaged a select group of data engineers and data analysts to gain valuable insights. Users were segmented based on their roles, responsibilities, and self-reported interactions with the product. To guide the interviews, we developed a semi-structured interview framework that focused on uncovering pain points, analyzing workflows, and identifying unmet needs specific to policy workflows and data observability.
+                </p>
+                <p>
+                    We conducted one-on-one interviews remotely, utilizing screen-sharing tools to observe users interacting with the product in real time. To respect confidentiality and the sensitivity of their data, sessions were not recorded. During the interviews, we encouraged participants to verbalize their thoughts, frustrations, and decision-making processes as they navigated through tasks.
+                </p>
+                <p>
+                    Improve the data policy creation workflow by updating interactions and page layout.
+
+The current workflow quickly becomes difficult to manage: Users have to configure multiple rules in one part of the UI while feedback and advanced settings builds in a separate, disconnected area of the UI. The dynamic nature of the growing list further complicates this process. In cases where many (~1000) rules can quickly make the list of built rules unwieldy.
+
+Create a new workflow and layout to better manage the steps necessary to build complex policies and rules.
+This new layout and set of interactions should account for future Bulk interactions and applicability
+The new UI should better associate the action and feedback of creating rules and policies
+The new UI should prevent unmanageable scrolling events and keep immediate feedback within view
+The new layout should also improve the legibility of each section and the objectives in the policy creation process. Hierarchy will be created with typoagraphy and blocking of UI components</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!------------------------------->
+
+<!-------------Project Description Section------------------>
+<section data-aos="fade-up" class="project-description-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-12 mx-auto">
+                <h4 class="project-title">Heuristic Evaluation</h4>
+                <p class="project-description  font-sm pb-0">
+                    The following issues, observed during the evaluation of the product’s design, highlight significant usability problems. These are analyzed against heuristic usability principles (e.g., Nielsen’s Heuristics) which we used to identify the most egregious concerns to suggest UX improvements.
+                </p>
+                <img data-aos="fade-up" width="100%" srcset="images/portfolio/policy_workflows/Original ADOC Data Quality Configuration page@2x.png 2x, images/portfolio/policy_workflows/Original ADOC Data Quality Configuration page@3x.png 3x" src="images/portfolio/policy_workflows/Original ADOC Data Quality Configuration page.png">
+                <figcaption><br>Original ADOC Data Quality Configuration page.</figcaption>
+            </div>
+        </div>
+    </div>
+</section>
+<!------------------------------->
+
+<!------- Heuristic Section -------->
+<section class="portfolio-section" data-aos="fade-up">
+    <div class="container">
+        <div class="row">
+             <!------ Portfolio box ------->
+             <div class="col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">
+                <h3 class='portfolio-title'>
+                    1. Poor Visual Hierarchy</h3>
+                <p class='portfolio-category font-sm pb-0'>Heuristic Violation: Aesthetic and Minimalist Design, Visibility of System Status</p>
+                <p class="project-description">The interface lacks a clear visual hierarchy, with the most important details buried at the bottom of the page and less critical information displayed prominently at the top. This misalignment forces users to hunt for relevant information, increasing cognitive load and task completion time.
+                </p>
+                <p class="project-description">
+                Improvement: Rearranged elements to prioritize critical information at the top of the page, supported by visual cues like headings, bold text, and spacing to guide user focus.
+                </p>
+
+            </div>
+            <!----------------------------->
+             <!------ Portfolio box ------->
+             <div class="col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">
+                <h3 class='portfolio-title'>
+                    2. Poor Feedback Mechanisms</h3>
+                <p class='portfolio-category font-sm pb-0'>Heuristic Violation: Visibility of System Status, Error Prevention</p>
+                <p class="project-description">Feedback is either insufficient or located outside the visible area, leaving users uncertain about whether their actions were successful or if an error occurred. Both are occuring in the original implementation. This often resulted in repeated actions and user frustration.
+                </p>
+                <p class="project-description">
+                   Improvement: Ensure feedback (e.g., confirmations, error messages) is immediate, visible, and contextually tied to the relevant action. We chose to use inline validation and toast messages for updates in addition to significant layout changes to maximize the workable area above the fold.
+                </p>
+
+            </div>
+            <!----------------------------->
+             <!------ Portfolio box ------->
+             <div class="col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">
+                <h3 class='portfolio-title'>
+                    3. Hidden or Partially-obscured Workspace</h3>
+                <p class='portfolio-category font-sm pb-0'>Heuristic Violation: Flexibility and Efficiency of Use</p>
+                <p class="project-description">Much of the primary workspace was obscured by one-time interaction inputs and metadata that lose relevance after the initial review. This disrupts the user’s focus and workflow.
+                </p>
+                <p class="project-description">
+                   Improvement: Relocated secondary information and basic form inputs to collapsible sections at the end of the workflow, where they are most relevant. This adjustment prioritizes primary components, keeping them front and center during critical tasks for improved focus and efficiency.
+                </p>
+
+            </div>
+            <!----------------------------->
+             <!------ Portfolio box ------->
+             <div class="col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">
+                <h3 class='portfolio-title'>
+                    4. Unclear Call to Action (CTA)</h3>
+                <p class='portfolio-category font-sm pb-0'>Heuristic Violation: Match Between System and the Real World, Recognition Rather Than Recall</p>
+                <p class="project-description">Call-to-action buttons were poorly positioned with unclear labels, making it difficult for users to identify the next steps.
+                </p>
+                <p class="project-description">
+                   Improvement: Enhanced the workflow by implementing clear, descriptive labels and structured guidance to help users navigate tasks effectively. Added section labels to distinguish between required and optional steps, and introduced a stepper with numbered stages to provide a clear roadmap for completing the workflow.
+                </p>
+
+            </div>
+            <!----------------------------->
+             <!------ Portfolio box ------->
+             <div class="col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">
+                <h3 class='portfolio-title'>
+                    5. Poor Flow and Section Dependencies</h3>
+                <p class='portfolio-category font-sm pb-0'>Heuristic Violation: Consistency and Standards, User Control and Freedom</p>
+                <p class="project-description">The workflow lacks clear communication about section dependencies, causing confusion about what needs to be completed first or how sections interact. Users often overlooked required steps or dependencies, leading to feeling overwhelmed, confused, or failure to complete in the worst cases.
+                </p>
+                <p class="project-description">
+                   Improvement: Organized the interface into distinct sections, offering users a sense of progress and completion, with prominent labels directing them to the next actions. Sections that were completed were subtly obscured, while irrelevant sections were hidden until needed. The workflow culminates in a prominent final CTA to finalize the process, ensuring users remain focused and confident throughout their journey.
+                </p>
+
+            </div>
+            <!----------------------------->
+             <!------ Portfolio box ------->
+             <div class="col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">
+                <h3 class='portfolio-title'>
+                    Additional Observations and Recommendations:</h3>
+                <p class='portfolio-category font-sm pb-0'>Heuristic Violation: Consistency and Standards, User Control and Freedom</p>
+                <p>
+                    <ul>
+                        <li>Labels were ambiguous or missing, leaving users unsure of the purpose of fields or actions. We used descriptive, consistent labels aligned with user terminology.</li>
+                        <li>Once a policy is completed, users could not make edits, violating flexibility principles. We added editing, versioning, and additional safeguards (e.g., version history and confirmation prompts).</li>
+                        <li>The absence of guidance or tooltips left users without support. We added contextual help (e.g., tooltips, “?” icons, and inline documentation).</li>
+                        <li>Action buttons were not easily visible, which reduced task discoverability. We defined consistent button positioning and show/hide functionality to ensure they are visible within the workflow context.</li>
+                    </ul>
+                </p>
+            </div>
+            <!----------------------------->
+        </div>
+    </div>
+</section>
+<!--------------------------------->
 
 <!-------------Project Description Section------------------>
 <section data-aos="fade-up" class="project-description-section">
@@ -228,6 +357,57 @@
         </div>
     </div>
 </section>
+
+<!-------------Project Description Section------------------>
+<section data-aos="fade-up" class="project-description-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-12 mx-auto">
+                <h4 class="project-title">Title</h4>
+                <p class="project-description  font-sm pb-0">
+                    Descriptive Text
+                </p>
+                <img data-aos="fade-up" width="100%" srcset="images/portfolio/policy_workflows/nullcheck_policy_absolute@2x.png 2x, images/portfolio/policy_workflows/nullcheck_policy_absolute@3x.png 3x" src="images/portfolio/policy_workflows/nullcheck_policy_absolute.png">
+                <figcaption><br>Caption.</figcaption>
+            </div>
+        </div>
+    </div>
+</section>
+<!------------------------------->
+
+<!-------------Project Description Section------------------>
+<section data-aos="fade-up" class="project-description-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-12 mx-auto">
+                <h4 class="project-title">Title</h4>
+                <p class="project-description  font-sm pb-0">
+                    Descriptive Text
+                </p>
+                <img data-aos="fade-up" width="100%" srcset="images/portfolio/policy_workflows/step_sql@2x.png 2x, images/portfolio/policy_workflows/step_sql@3x.png 3x" src="images/portfolio/policy_workflows/step_sql.png">
+                <figcaption><br>Caption.</figcaption>
+            </div>
+        </div>
+    </div>
+</section>
+<!------------------------------->
+
+<!-------------Project Description Section------------------>
+<section data-aos="fade-up" class="project-description-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-12 mx-auto">
+                <h4 class="project-title">Title</h4>
+                <p class="project-description  font-sm pb-0">
+                    Descriptive Text
+                </p>
+                <img data-aos="fade-up" width="100%" srcset="images/portfolio/policy_workflows/step_udt@2x.png 2x, images/portfolio/policy_workflows/step_udt@3x.png 3x" src="images/portfolio/policy_workflows/step_udt.png">
+                <figcaption><br>Caption.</figcaption>
+            </div>
+        </div>
+    </div>
+</section>
+<!------------------------------->
 
 <!-------------Project Description Section------------------>
 <section data-aos="fade-up" class="project-description-section">
@@ -289,10 +469,10 @@
             <!------ Portfolio box -------
             <div class="col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">
                 <a class='portfolio-title' href='data_visualization.html'>
-                    <img class="portfolio-image" src="images/5_t_observable_dashboards.png"
-                    srcset="images/5_t_observable_dashboards@2x.png 2x, images/5_t_observable_dashboards@3x.png 3x">
-                    Visualizing Observability</a>
-                <a class='portfolio-category' href='data_visualization.html'>Enterprise Data Observability and Incident Management</a>
+                    <img class="portfolio-image" src="images/5_t_policy_workflows.png"
+                    srcset="images/5_t_policy_workflows@2x.png 2x, images/5_t_policy_workflows@3x.png 3x">
+                    Policy Workflow Optimization</a>
+                <a class='portfolio-category' href='data_visualization.html'>Enterprise Data Observability Core Administration</a>
             </div>
             <!----------------------------->
             <!------ Portfolio box ------->

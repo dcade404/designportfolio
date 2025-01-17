@@ -96,20 +96,20 @@
     <div class="container">
         <div class="row">
             <nav class="navbar navbar-expand-sm navbar-light bg-light w-100">
-                <a class="navbar-brand" onclick="getURL(&#39;&#39;)" href="index.html#">David Cade</a>
+                <a class="navbar-brand" onclick="getURL('')" href="#">David Cade</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul id="nav" class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" data-page="about.html" onclick="getURL(&#39;about.html&#39;)" href="about.html#">About</a>
+                            <a class="nav-link" data-page="about.html" href="about.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-page="work.html" onclick="getURL(&#39;work.html&#39;)" href="work.html#">Work</a>
+                            <a class="nav-link" data-page="work.html" href="work.html">Work</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-page="contact.html" onclick="getURL(&#39;contact.html&#39;)" href="contact.html#">Contact</a>
+                            <a class="nav-link" data-page="contact.html" href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -117,6 +117,32 @@
         </div>
     </div>
 </section>
+<!------------------------------->
+
+<script>
+    function getURL(page) {
+        var pageurl = location.protocol + '//' + location.hostname + '/' + page;
+        location.replace(pageurl);
+    }
+
+    $(document).ready(function () {
+        // Get the current path
+        var current = location.pathname.split('/').pop();
+
+        // Reset active class for all links
+        $("a.nav-link").removeClass('active');
+
+        // Add active class to the matching nav link
+        $("a.nav-link").each(function () {
+            var $this = $(this);
+            if ($this.data('page') === current) {
+                $this.addClass('active');
+            }
+        });
+    });
+</script>
+</div>
+
 <!------------------------------->
 
 <!-------- Hero Section --------->

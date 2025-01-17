@@ -99,13 +99,13 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul id="nav" class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" data-page="about.html" onclick="getURL('about.html')" href="#">About</a>
+                            <a class="nav-link" data-page="about.html" href="about.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-page="work.html" onclick="getURL('work.html')" href="#">Work</a>
+                            <a class="nav-link" data-page="work.html" href="work.html">Work</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-page="contact.html" onclick="getURL('contact.html')" href="#">Contact</a>
+                            <a class="nav-link" data-page="contact.html" href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -117,26 +117,25 @@
 
 <script>
     function getURL(page) {
-        var pageurl =    location.protocol+'//'+location.hostname+'/'+page;
-        location.replace(pageurl)
-
+        var pageurl = location.protocol + '//' + location.hostname + '/' + page;
+        location.replace(pageurl);
     }
+
     $(document).ready(function () {
-        var current = location.pathname;
-        current = current.replace('/','');
-        if(current.length > 0){
-            $("a.nav-link").each(function () {
-                var $this = $(this);
-                // if the current path is like this link, make it active
-                if ($this.data('page').indexOf(current) !== -1) {
-                    $this.addClass('active');
-                }
-            });
+        // Get the current path
+        var current = location.pathname.split('/').pop();
 
+        // Reset active class for all links
+        $("a.nav-link").removeClass('active');
 
-        }
-
-    })
+        // Add active class to the matching nav link
+        $("a.nav-link").each(function () {
+            var $this = $(this);
+            if ($this.data('page') === current) {
+                $this.addClass('active');
+            }
+        });
+    });
 </script>
 </div>
 

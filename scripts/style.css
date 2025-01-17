@@ -516,12 +516,12 @@ section.project-hero-unit{
 .portfolio-footer-title .border-bottom{
   border-color:  #eee!important;
 }
-section.project-hero-unit.the-ken {
-    background: #FFF1F2;
+section.project-hero-unit.policy_workflows {
+    background: #FF9E2C;
     border-bottom: 1px solid #eeeeee;
 
 }
-.project-hero-unit.gocrackit{
+.project-hero-unit.gocrackit {
    background: #00C7C6;
     border-bottom: 1px solid #eeeeee;
 }

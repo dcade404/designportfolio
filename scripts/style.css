@@ -169,6 +169,10 @@ section.hero-section {
     line-height: 106px;
 }
 
+.section-title.low-line-height {
+    line-height: 84px;
+}
+
 .section-subtitle {
     font-size: 24px;
     line-height: 35px;
@@ -521,8 +525,8 @@ section.project-hero-unit.policy_workflows {
     border-bottom: 1px solid #eeeeee;
 
 }
-.project-hero-unit.gocrackit {
-   background: #00C7C6;
+.project-hero-unit.feature_discovery {
+   background: #36C5C4;
     border-bottom: 1px solid #eeeeee;
 }
 .project-hero-unit.augmented{
@@ -1086,10 +1090,10 @@ section.project-hero-unit.pentathlon {
     border-radius: 10px;
 }
 .banner-section.applause h1 span {
-    font-family: "Akrobat-Bold" !important;
+    font-family: "Poppins" !important;
 }
 .banner-section.applause h1 strong {
-    font-family: "Akrobat-Black" !important;
+    font-family: "Poppins" !important;
 }
 .home-gallery li {
     list-style: none;

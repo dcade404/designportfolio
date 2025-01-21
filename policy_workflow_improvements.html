@@ -119,6 +119,32 @@
 </section>
 <!------------------------------->
 
+<script>
+    function getURL(page) {
+        var pageurl = location.protocol + '//' + location.hostname + '/' + page;
+        location.replace(pageurl);
+    }
+
+    $(document).ready(function () {
+        // Get the current path
+        var current = location.pathname.split('/').pop();
+
+        // Reset active class for all links
+        $("a.nav-link").removeClass('active');
+
+        // Add active class to the matching nav link
+        $("a.nav-link").each(function () {
+            var $this = $(this);
+            if ($this.data('page') === current) {
+                $this.addClass('active');
+            }
+        });
+    });
+</script>
+</div>
+
+<!------------------------------->
+
 <!-------- Hero Section --------->
 <section class="hero-section project-title-section" data-aos="fade-up">
     <div class="container">

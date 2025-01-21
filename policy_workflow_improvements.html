@@ -96,20 +96,20 @@
     <div class="container">
         <div class="row">
             <nav class="navbar navbar-expand-sm navbar-light bg-light w-100">
-                <a class="navbar-brand" onclick="getURL(&#39;&#39;)" href="index.html#">David Cade</a>
+                <a class="navbar-brand" onclick="getURL('')" href="#">David Cade</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul id="nav" class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" data-page="about.html" onclick="getURL(&#39;about.html&#39;)" href="about.html#">About</a>
+                            <a class="nav-link" data-page="about.html" href="about.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-page="work.html" onclick="getURL(&#39;work.html&#39;)" href="work.html#">Work</a>
+                            <a class="nav-link" data-page="work.html" href="work.html">Work</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-page="contact.html" onclick="getURL(&#39;contact.html&#39;)" href="contact.html#">Contact</a>
+                            <a class="nav-link" data-page="contact.html" href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -415,6 +415,23 @@ The new layout should also improve the legibility of each section and the object
 </section>
 <!------------------------------->
 
+<!-------------Demo Section------------------>
+<section data-aos="fade-up" class="project-description-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-12 mx-auto">
+                <h4 class="project-title">Demo on Production</h4>
+                     <video width="100%" controls poster="placeholder.jpg" preload="none" loading="lazy">
+                        <source src="images/portfolio/policy_workflows/policy_workflow_prod.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+            </div>
+        </div>
+    </div>
+</section>
+<!------------------------------->
+
+
 <!-------------Project Description Section------------------>
 <section data-aos="fade-up" class="project-description-section">
     <div class="container">
@@ -494,7 +511,15 @@ The new layout should also improve the legibility of each section and the object
                 <a class='portfolio-category' href='copilot.html'>Enterprise Data Observability and Natural Language Interfaces</a>
             </div>
             <!----------------------------->
-
+            <!------ Portfolio box ------->
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 portfolio-box">
+                <a class='portfolio-title' href='feature_discovery.html'>
+                    <img class="portfolio-image" src="images/7_feature_discovery.png"
+                    srcset="images/7_feature_discovery@2x.png 2x, images/7_feature_discovery@3x.png 3x">
+                    Feature Discovery</a>
+                <a class='portfolio-category' href='feature_discovery.html'>Automated Feature Engineering for Smarter, Faster AI Model Development</a>
+            </div>
+            <!----------------------------->
         </div>
     </div>
 </section>

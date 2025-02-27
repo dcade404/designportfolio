@@ -141,24 +141,33 @@
 
 <!------------------------------->
 
-<!-------------Project Description Section------------------>
-<section data-aos="fade-up" class="project-description-section">
+<!-------------Contact Section------------------>
+<section class="contact-section" data-aos="fade-up">
     <div class="container">
-        <div class="row">
-            <div class="col-12 mx-auto">
-                <h2 class="section-title low-line-height">Beautiful Experiences<br>Begin Here.</h2>
-                    <p>Write to:<a href="mailto:dcade404@gmail.com" class="text-black text-decoration-none"><strong>dcade404@gmail</strong></a>
-                </p>
-                    <p><img class="apply-filter profilpic" src="images/linkedin.svg"><a href="https://www.linkedin.com/in/davidlcade" class="text-black text-decoration-none">davidlcade</a>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-12 text-center">
+                <h2 class="section-title">Beautiful Experiences<br>Begin Here.</h2>
+                <div class="contact-info">
+                    <p class="lead">Let's create something amazing together. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                    <div class="contact-links">
+                        <p>
+                            <a href="mailto:dcade404@gmail.com" class="contact-link">
+                                <span class="link-icon">✉️</span>
+                                <span class="link-text">dcade404@gmail.com</span>
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://www.linkedin.com/in/davidlcade" class="contact-link">
+                                <img class="profilpic" src="images/linkedin.svg" alt="LinkedIn">
+                                <span class="link-text">Connect on LinkedIn</span>
+                            </a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<!---- Project Featured Photo Section ------->
-
-                <img data-aos="fade-up" width="100%" srcset="images/mountainicebergs@2x.png 2x, images/mountainicebergs@3x.png 3x" src="images/mountainicebergs.png" class="aos-init aos-animate">
 
 <!------------------------------->
 
@@ -181,6 +190,76 @@
 
     new WOW().init();
     AOS.init();
+</script>
+
+<script>
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Contact Section Animation
+    gsap.from('.contact-section .section-title', {
+        scrollTrigger: {
+            trigger: '.contact-section',
+            start: 'top center+=100',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        ease: 'power3.out'
+    });
+
+    // Contact Info Animation
+    gsap.from('.contact-info', {
+        scrollTrigger: {
+            trigger: '.contact-info',
+            start: 'top center+=100',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1,
+        y: 30,
+        opacity: 0,
+        delay: 0.3,
+        ease: 'power3.out'
+    });
+
+    // Featured Image Animation
+    gsap.from('.featured-image', {
+        scrollTrigger: {
+            trigger: '.featured-image',
+            start: 'top center+=100',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        delay: 0.6,
+        ease: 'power3.out'
+    });
+
+    // Sticky Header
+    const navSection = document.querySelector('.nav-section');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 50) {
+            navSection.classList.add('scrolled');
+        } else {
+            navSection.classList.remove('scrolled');
+        }
+        
+        lastScroll = currentScroll;
+    });
+
+    // Scroll Progress Bar
+    window.addEventListener('scroll', () => {
+        const scrollProgress = document.querySelector('.scroll-progress');
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercent = (window.scrollY / windowHeight) * 100;
+        scrollProgress.style.width = scrollPercent + '%';
+    });
 </script>
 
 </body>

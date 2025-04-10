@@ -80,13 +80,21 @@
     <link rel="stylesheet" type="text/css" href="scripts/aos.css">
     <link rel="stylesheet" type="text/css" href="scripts/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="scripts/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="scripts/style.css">
+        <link rel="stylesheet" type="text/css" href="scripts/style.css">
+            
+            <script async="" src="scripts/modules.7c8f0fa049d445ea09fd.js" charset="utf-8"></script>
+            <!-- GSAP for smooth animations -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-<script async="" src="scripts/modules.7c8f0fa049d445ea09fd.js" charset="utf-8"></script>
+            <!-- Locomotive Scroll for smooth scrolling -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+            <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 </head>
 
-<body class="homepage dcade" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
-
+<body class="homepage dcade" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0" data-scroll-container>
+    <!-- Add progress bar -->
+    <div class="scroll-progress"></div>
 <!-- Navigation Section -->
 <div class="include-navbar">
 <section class="nav-section">
@@ -143,6 +151,7 @@
 <!------------------------------->
 
 <!-------- Hero Section --------->
+<section class="hero-section" data-scroll-section>
 <section class="hero-section" data-aos="fade-up">
     <div class="container">
         <div class="row">
@@ -154,9 +163,11 @@
         </div>
     </div>
 </section>
+</section>
 <!------------------------------->
 
 <!------- Portfolio Section -------->
+<section class="hero-section" data-scroll-section>
 <section class="portfolio-section" data-aos="fade-up">
     <div class="container">
         <div class="row">
@@ -226,9 +237,11 @@
         </div>
     </div>
 </section>
+</section>
 <!--------------------------------->
 
 <!-------- About Me Section --------->
+<section class="hero-section" data-scroll-section>
 <section class="about-me-section" data-aos="fade-up">
     <div class="container">
         <div class="row">
@@ -249,6 +262,7 @@
             </div>
         </div>
     </div> 
+</section>
 </section>
 <!----------------------------------->
 
@@ -274,6 +288,106 @@
     AOS.init();
    
 
+</script>
+
+<script>
+    // Scroll Progress Bar
+    window.addEventListener('scroll', () => {
+        const scrollProgress = document.querySelector('.scroll-progress');
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercent = (window.scrollY / windowHeight) * 100;
+        scrollProgress.style.width = scrollPercent + '%';
+    });
+
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero Section Animation
+    gsap.from('.hero .section-title', {
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        ease: 'power3.out'
+    });
+
+    gsap.from('.hero .hero-description', {
+        duration: 1,
+        y: 30,
+        opacity: 0,
+        delay: 0.3,
+        ease: 'power3.out'
+    });
+
+    // Portfolio Items Animation
+    gsap.utils.toArray('.portfolio-box').forEach((box, i) => {
+        gsap.from(box, {
+            scrollTrigger: {
+                trigger: box,
+                start: 'top bottom-=100',
+                toggleActions: 'play none none reverse'
+            },
+            duration: 0.8,
+            y: 50,
+            opacity: 0,
+            delay: i * 0.1,
+            ease: 'power3.out'
+        });
+    });
+
+    // About Me Section Animation
+    gsap.from('.about-me-section .section-title', {
+        scrollTrigger: {
+            trigger: '.about-me-section',
+            start: 'top center+=100',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1,
+        y: 50,
+        opacity: 0,
+        ease: 'power3.out'
+    });
+
+    gsap.from('.about-me-section .about-me-description', {
+        scrollTrigger: {
+            trigger: '.about-me-section',
+            start: 'top center+=100',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1,
+        y: 30,
+        opacity: 0,
+        delay: 0.3,
+        ease: 'power3.out'
+    });
+
+    gsap.from('.about-me-section .profilpic', {
+        scrollTrigger: {
+            trigger: '.about-me-section',
+            start: 'top center+=100',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1,
+        x: 50,
+        opacity: 0,
+        delay: 0.6,
+        ease: 'power3.out'
+    });
+
+    // Sticky Header
+    const navSection = document.querySelector('.nav-section');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 50) {
+            navSection.classList.add('scrolled');
+        } else {
+            navSection.classList.remove('scrolled');
+        }
+        
+        lastScroll = currentScroll;
+    });
 </script>
 
 </body></html>
